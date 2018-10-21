@@ -17,30 +17,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="w2r-tF-sX2">
-                                <rect key="frame" x="0.0" y="64" width="414" height="662"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="w2r-tF-sX2">
+                                <rect key="frame" x="0.0" y="63.999999999999972" width="414" height="386.33333333333326"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Of2-Wv-AEo">
-                                        <rect key="frame" x="0.0" y="0.0" width="86.333333333333329" height="20.333333333333332"/>
+                                        <rect key="frame" x="164" y="0.0" width="86.333333333333314" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QjL-ld-BTI">
-                                        <rect key="frame" x="0.0" y="28.333333333333343" width="414" height="267.66666666666663"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QjL-ld-BTI">
+                                        <rect key="frame" x="0.0" y="28.333333333333329" width="414" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Sn-fi-IT8">
-                                        <rect key="frame" x="0.0" y="304" width="151" height="30"/>
-                                        <state key="normal" title="Set Default Label Text"/>
-                                        <connections>
-                                            <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xyf-nU-u6O"/>
-                                        </connections>
-                                    </button>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="320" verticalCompressionResistancePriority="320" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="HHf-LG-izP">
-                                        <rect key="frame" x="0.0" y="342" width="320" height="320"/>
+                                        <rect key="frame" x="47" y="66.333333333333343" width="320" height="320"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="HHf-LG-izP" secondAttribute="height" multiplier="1:1" id="vA1-Cr-lg6"/>
@@ -51,21 +44,19 @@
                                     </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="QjL-ld-BTI" secondAttribute="trailing" id="Qof-iO-nt4"/>
+                                    <constraint firstAttribute="trailing" secondItem="QjL-ld-BTI" secondAttribute="trailing" id="mWi-ut-YkP"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="laI-gp-uBQ" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="733" width="252" height="44"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="laI-gp-uBQ" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
+                                <rect key="frame" x="20" y="733" width="252" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="w2r-tF-sX2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CEn-in-Q8G"/>
-                            <constraint firstItem="laI-gp-uBQ" firstAttribute="leading" secondItem="w2r-tF-sX2" secondAttribute="leading" id="H0g-FC-CKc"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="w2r-tF-sX2" secondAttribute="trailing" id="MQ2-gv-cel"/>
-                            <constraint firstItem="laI-gp-uBQ" firstAttribute="top" secondItem="w2r-tF-sX2" secondAttribute="bottom" constant="7" id="bBa-Pc-X7e"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="laI-gp-uBQ" secondAttribute="bottom" constant="85" id="tCy-rM-kS9"/>
-                            <constraint firstItem="w2r-tF-sX2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="yVF-5c-2QT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="w2r-tF-sX2" secondAttribute="trailing" id="wgD-le-GHP"/>
+                            <constraint firstItem="w2r-tF-sX2" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="20" id="ytE-5u-Nhf"/>
+                            <constraint firstItem="w2r-tF-sX2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="z1x-mL-Q2j"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -83,7 +74,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="136.23188405797103" y="133.25892857142856"/>
         </scene>
     </scenes>
     <resources>
