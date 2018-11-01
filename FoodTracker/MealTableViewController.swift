@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import os.log
 
 class MealTableViewController: UITableViewController {
-    // MARK: Properties
+    // MARK: - Properties
     var meals = [Meal]()
         
     override func viewDidLoad() {
@@ -18,7 +19,6 @@ class MealTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -43,7 +43,7 @@ class MealTableViewController: UITableViewController {
         return cell
     }
  
-    // MARK: Actions
+    // MARK: - Actions
     @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? MealViewController, let meal = sourceViewController.meal {
             let newIndexPath = IndexPath(row: meals.count, section: 0)
@@ -53,8 +53,7 @@ class MealTableViewController: UITableViewController {
         }
     }
     
-    // MARK: Private Methods
-    
+    // MARK: - Private Methods
     private func loadSampleMeals() {
         let photo1 = UIImage(named: "meal1")
         let photo2 = UIImage(named: "meal2")
@@ -75,4 +74,32 @@ class MealTableViewController: UITableViewController {
         meals += [meal1, meal2, meal3]
     }
     
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        switch (segue.identifier ?? "") {
+        case "AddItem":
+            os_log("Adding a new meal", log: OSLog.default, type: .debug)
+            
+        case "ShowDetail":
+            guard let mealDetailViewController = segue.destination as? MealViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            guard let selectedMealCell = sender as? MealTableViewCell else {
+                fatalError("Unexpected sender: \(sender)")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedMealCell) else {
+                fatalError("Selected cell is not currently displayed")
+            }
+            
+            let selectedMeal = meals[indexPath.row]
+            mealDetailViewController.meal = selectedMeal
+            
+        default:
+            fatalError("Unexpected segue identifier: \(segue.identifier)")
+        }
+    }
 }
